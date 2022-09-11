@@ -1,47 +1,45 @@
 import controller.CustomerController;
 import controller.ProductController;
 import controller.SaleController;
+import controller.ShoppingCartController;
 import dto.Customer;
 import dto.Product;
+import dto.Sale;
 
-import javax.swing.*;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        ProductController productController = new ProductController();
         CustomerController customerController = new CustomerController();
         SaleController saleController = new SaleController();
+        ShoppingCartController shoppingCartController = new ShoppingCartController();
 
-//        List<Product> products = productController.findAllProducts();
-        Customer customer = customerController.findCustomerById(1L);
+        Customer customer = customerController.checkIfNewOrExistingCustomer();
+//        shoppingCartController.addToShoppingCart(customer);
 
-//        List<Product> shoppingCart = new ArrayList<>();
-//        while (true){
-//            System.out.println("-----SHOPPING CART-----");
-//            shoppingCart.forEach(System.out::println);
-//            System.out.println();
-//            System.out.println("------AVAILABLE PRODUCTS-------");
-//            products.forEach(System.out::println);
-//            System.out.println();
-//            System.out.println("SELECT PRODUCTS FROM A LIST YOU WANT TO BUY");
-//            int option = Integer.parseInt(JOptionPane.showInputDialog("Enter the product id / enter 0 to make a purchase"));
-//            if (option == 0){
-//                saleController.addSale(customer, shoppingCart);
-//                System.out.println("Thank you for your purchase!");
-//                break;
-//            }
-//            Optional<Product> chosenOne = products.stream().filter(product -> product.getId() == option).findFirst();
-//            if (chosenOne.isPresent()){
-//                Product product = chosenOne.get();
-//                customer.setBalance((float) (customer.getBalance() - product.getPrice()));
-//                product.setQuantity(product.getQuantity() - 1);
-//                shoppingCart.add(product);
-//            }
-//        }
+//        ProductController productController = new ProductController();
 
-        saleController.findSalesByCustomer(customer).forEach(System.out::println);
+//        productController.addProduct();
+
+
+        List<Sale> sales = saleController.findSalesByCustomer(customer);
+        if (sales.size() > 0){
+            System.out.println(sales.get(0).getCustomer().getName() + " Bought these items: ");
+            Map<Product, Integer> map = new HashMap<>();
+            sales.forEach(sale -> sale.getProduct()
+                    .forEach(product -> {
+                if (map.containsKey(product)){
+                    map.put(product, map.get(product) + 1);
+                } else {
+                    map.put(product, 1);
+                }
+            }));
+            map.forEach((product, integer) -> System.out.println(product.getProductName() + " - " + product.getPrice() + "$" + " Amount: " + integer));
+//            sales
+//                    .forEach(sale -> sale.getProduct()
+//                            .forEach(product -> System.out.println(product.getProductName() + " - " + product.getPrice() + "$")));
+        }
     }
 }

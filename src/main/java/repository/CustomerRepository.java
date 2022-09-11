@@ -13,7 +13,7 @@ public class CustomerRepository {
     private static final SessionFactory factory = SessionManager.getSessionFactory();
 
 
-    public String createCustomer(Customer customer) {
+    public Customer createCustomer(Customer customer) {
         Transaction transaction = null;
 
         try(Session session = factory.openSession()) {
@@ -27,7 +27,7 @@ public class CustomerRepository {
             System.out.println(e.getClass() + ": " + e.getMessage());
         }
 
-        return "Customer created.";
+        return customer;
     }
 
     public Customer findCustomerById(Long id){

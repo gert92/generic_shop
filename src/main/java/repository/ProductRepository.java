@@ -46,6 +46,23 @@ public class ProductRepository {
         return products;
     }
 
+    public List<Product> findAllAvailableProducts(){
+        Transaction tx = null;
+        List<Product> products = new ArrayList<>();
+
+        try(Session session = factory.openSession()) {
+            tx = session.beginTransaction();
+            products = session.createQuery("from Product where quantity > 0", Product.class).getResultList();
+            tx.commit();
+        } catch (Exception e){
+            if (tx != null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+        return products;
+    }
+
     public Product findProductById(Long id){
         Transaction tx = null;
         Product product = null;

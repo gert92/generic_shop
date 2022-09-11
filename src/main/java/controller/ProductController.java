@@ -14,6 +14,10 @@ public class ProductController {
         return repository.findAllProducts();
     }
 
+    public List<Product> findAllAvailableProducts(){
+        return repository.findAllAvailableProducts();
+    }
+
     public void addProduct(){
         String productName = JOptionPane.showInputDialog("Enter the product name");
         String productQuantity = JOptionPane.showInputDialog("Enter the product quantity");

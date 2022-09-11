@@ -65,11 +65,32 @@ public class SaleRepository {
         return sale;
     }
 
+//    public List<Sale> findSalesByCustomerId(Customer customer){
+//        Session session = factory.openSession();
+//        Transaction tx = null;
+//        List<Sale> sales = new ArrayList<>();
+//        try {
+//            tx = session.beginTransaction();
+//            Query<Sale> query = session.createQuery("from Sale where customer = :customer", Sale.class);
+//            query.setParameter("customer", customer);
+//            sales = query.getResultList();
+//            tx.commit();
+//        } catch (Exception e){
+//            if (tx != null){
+//                tx.rollback();
+//            }
+//            e.printStackTrace();
+//        } finally {
+//            session.close();
+//        }
+//
+//        return sales;
+//    }
+
     public List<Sale> findSalesByCustomerId(Customer customer){
-        Session session = factory.openSession();
         Transaction tx = null;
         List<Sale> sales = new ArrayList<>();
-        try {
+        try(Session session = factory.openSession()) {
             tx = session.beginTransaction();
             Query<Sale> query = session.createQuery("from Sale where customer = :customer", Sale.class);
             query.setParameter("customer", customer);
@@ -80,8 +101,6 @@ public class SaleRepository {
                 tx.rollback();
             }
             e.printStackTrace();
-        } finally {
-            session.close();
         }
 
         return sales;
