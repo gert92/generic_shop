@@ -42,7 +42,7 @@ public class CustomerRepository {
             if (transaction != null){
                 transaction.rollback();
             }
-            e.printStackTrace();
+            System.out.println(e.getClass() + ": " + e.getMessage());
         }
         return customers;
     }
@@ -57,7 +57,7 @@ public class CustomerRepository {
             if (transaction != null){
                 transaction.rollback();
             }
-            e.printStackTrace();
+            System.out.println(e.getClass() + ": " + e.getMessage());
         }
 
         return "Customer removed.";
