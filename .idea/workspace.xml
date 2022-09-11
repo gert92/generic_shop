@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="shopping cart + display">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestProductController.java" afterDir="false" />
+    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="mockito + junit install">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +70,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestProductController.testRetrievingAllProducts">
+  <component name="RunManager" selected="JUnit.TestProductController">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="generic_shop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestProductController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="generic_shop" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestProductController" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,8 +99,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestProductController.testRetrievingAllProducts" />
+        <item itemvalue="JUnit.TestProductController" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestProductController.testRetrievingAllProducts" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +156,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1662908168513</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="mockito + junit install">
+      <created>1662911430248</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1662911430248</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +184,7 @@
     <MESSAGE value="fix" />
     <MESSAGE value="ejj" />
     <MESSAGE value="shopping cart + display" />
-    <option name="LAST_COMMIT_MESSAGE" value="shopping cart + display" />
+    <MESSAGE value="mockito + junit install" />
+    <option name="LAST_COMMIT_MESSAGE" value="mockito + junit install" />
   </component>
 </project>

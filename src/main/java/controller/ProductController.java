@@ -33,9 +33,12 @@ public class ProductController {
 
     }
 
-    public void findProduct(Long id){
-        repository.findProductById(id);
+    public Product findProduct(Long id){
+        return repository.findProductById(id);
+    }
 
+    public void deleteProduct(Product product){
+        repository.deleteProduct(product);
     }
 
 }

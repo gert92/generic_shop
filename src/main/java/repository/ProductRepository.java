@@ -66,7 +66,8 @@ public class ProductRepository {
     public Product findProductById(Long id){
         Transaction tx = null;
         Product product = null;
-        try(Session session = factory.openSession()) {
+        Session session = factory.openSession();
+        try {
             tx = session.beginTransaction();
             product = session.find(Product.class, id);
             tx.commit();
@@ -75,6 +76,8 @@ public class ProductRepository {
                 tx.rollback();
             }
             e.printStackTrace();
+        } finally {
+            session.close();
         }
 
         return product;
@@ -98,7 +101,8 @@ public class ProductRepository {
 
     public String deleteProduct(Product product){
         Transaction tx = null;
-        try(Session session = factory.openSession()) {
+        Session session = factory.openSession();
+        try{
             tx = session.beginTransaction();
             session.remove(product);
             tx.commit();
@@ -107,6 +111,8 @@ public class ProductRepository {
                 tx.rollback();
             }
             e.printStackTrace();
+        } finally {
+            session.close();
         }
 
         return "Product deleted!";
