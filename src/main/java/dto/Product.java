@@ -3,22 +3,23 @@ package dto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.*;
 
 @Entity
-@Table
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Customer {
-
+@Builder
+public class Product {
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
-    private float balance;
+    private String productName;
+    private Long quantity;
+    private Double price;
 
 }
+
+
