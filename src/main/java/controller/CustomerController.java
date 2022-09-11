@@ -21,4 +21,8 @@ public class CustomerController {
 
     }
 
+    public Customer findCustomerById(Long id){
+        return repository.findCustomerById(id);
+    }
+
 }

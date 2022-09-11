@@ -1,12 +1,17 @@
 package dto;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
 public class Sale {
     @Id
     @GeneratedValue
@@ -14,6 +19,7 @@ public class Sale {
     @ManyToOne
     private Customer customer;
     @OneToMany
+    @ToString.Exclude
     private List<Product> product;
 
 }

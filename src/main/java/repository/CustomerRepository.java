@@ -30,6 +30,24 @@ public class CustomerRepository {
         return "Customer created.";
     }
 
+    public Customer findCustomerById(Long id){
+        Transaction transaction = null;
+        Customer customer = null;
+
+        try(Session session = factory.openSession()) {
+            transaction = session.beginTransaction();
+            customer = session.find(Customer.class, id);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            System.out.println(e.getClass() + ": " + e.getMessage());
+        }
+
+        return customer;
+    }
+
     public List<Customer> showAllCustomer(){
         Transaction transaction = null;
         List<Customer> customers = new ArrayList<>();
