@@ -1,8 +1,9 @@
-import dto.Product;
+import controller.ProductController;
 
 public class Main {
     public static void main(String[] args) {
-        Product product = new Product();
+        ProductController productController = new ProductController();
 
+        productController.addProduct();
     }
 }

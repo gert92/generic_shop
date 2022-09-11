@@ -3,6 +3,8 @@ package dto;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import java.util.List;
+
 @Entity
 @Getter
 public class Sale {
@@ -12,6 +14,6 @@ public class Sale {
     @ManyToOne
     private Customer customer;
     @OneToMany
-    private Product product;
+    private List<Product> product;
 
 }
