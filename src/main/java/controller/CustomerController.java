@@ -41,9 +41,18 @@ public class CustomerController {
         StringBuilder stringBuilder = new StringBuilder("Select the id of the customer \n");
         List<Customer> customers = findAllCustomers();
         customers.forEach(m -> stringBuilder.append(m.getId()).append(" - ").append(m.getName()).append("\n"));
-        int answer = Integer.parseInt(JOptionPane.showInputDialog(stringBuilder));
-        Optional<Customer> customer = customers.stream().filter(c -> c.getId() == answer).findFirst();
-        return customer.orElse(null);
+        return findCustomerById(Long.parseLong(JOptionPane.showInputDialog(stringBuilder)));
+    }
+
+
+    public void updateFields(Customer customer){
+        String response =  repository.updateCustomer(customer);
+        System.out.println(response);
+    }
+
+    public void removeCustomer(Customer customer){
+        String response = repository.removeCustomer(customer);
+        System.out.println(response);
     }
 
 

@@ -1,5 +1,7 @@
 package controller;
 
+import dto.Customer;
+
 import javax.swing.*;
 
 public class MenuController {
@@ -33,8 +35,7 @@ public class MenuController {
             0. Back\s
             1. Add customer\s
             2. View customers\s
-            3. Update customer\s
-            4. Delete customer\s
+            3. Update/Remove customer\s
             """;
 
     private final String saleMenuOptions = """
@@ -47,6 +48,14 @@ public class MenuController {
             0. Back\s
             1. New customer?\s
             2. Existing customer?\s
+            """;
+
+    private final String updateCustomerOptions = """
+            0. Back\s
+            1. Update name\s
+            2. Update balance\s
+            3. SAVE CHANGES\s
+            9. Remove customer
             """;
 
     public void startMenu(){
@@ -86,12 +95,32 @@ public class MenuController {
     }
 
     private void customersMenu() {
+        Customer customer = null;
         switch (getUserInput(customerMenuOptions)){
             case 0 -> serviceMenu();
             case 1 -> customerController.addCustomer();
             case 2 -> customerController.displayAllCustomers();
-            case 3 -> System.out.println("update customer not implemented.");
-            case 4 -> System.out.println("remove customer not implemented.");
+            case 3 -> {
+                customer = customerController.chooseCustomer();
+                updateCustomerMenu(customer);
+            }
+        }
+    }
+
+    private void updateCustomerMenu(Customer customer){
+        switch (getUserInput(updateCustomerOptions)){
+            case 0 -> customersMenu();
+            case 1 -> {
+                customer.setName(JOptionPane.showInputDialog("Enter new customer name."));
+                updateCustomerMenu(customer);
+            }
+            case 2 -> {
+                customer.setBalance(Float.parseFloat(JOptionPane.showInputDialog("Enter the new balance of customer")));
+                updateCustomerMenu(customer);
+            }
+            case 3 -> customerController.updateFields(customer);
+            case 9 -> customerController.removeCustomer(customer);
+
         }
     }
 
