@@ -36,15 +36,6 @@ public class CustomerController {
         return repository.findCustomerById(id);
     }
 
-    public Customer checkIfNewOrExistingCustomer(){
-        int answer = JOptionPane.showConfirmDialog(null, "Are you a new Customer?");
-        Customer customer = null;
-        switch (answer){
-            case JOptionPane.YES_OPTION -> customer = addCustomer();
-            case JOptionPane.NO_OPTION -> customer = chooseCustomer();
-        }
-        return customer;
-    }
 
     public Customer chooseCustomer(){
         StringBuilder stringBuilder = new StringBuilder("Select the id of the customer \n");

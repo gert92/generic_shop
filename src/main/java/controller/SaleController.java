@@ -7,7 +7,6 @@ import repository.CustomerRepository;
 import repository.ProductRepository;
 import repository.SaleRepository;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
