@@ -15,7 +15,7 @@ public class SaleRepository {
     private static final SessionFactory factory = SessionManager.getSessionFactory();
 
 
-    public Sale createSale(Sale sale){
+    public String createSale(Sale sale){
         Transaction tx = null;
 
         try(Session session = factory.openSession()) {
@@ -28,16 +28,16 @@ public class SaleRepository {
             }
             e.printStackTrace();
         }
-        return sale;
+        return "Sale successful!";
     }
 
     public List<Sale> findAllSales(){
         Transaction tx = null;
-        List<Sale> sales = new ArrayList<>();
+        List<Sale> sales = null;
 
         try(Session session = factory.openSession()) {
             tx = session.beginTransaction();
-            sales = session.createQuery("from Product", Sale.class).getResultList();
+            sales = session.createQuery("from Sale", Sale.class).getResultList();
             tx.commit();
         } catch (Exception e){
             if (tx != null){

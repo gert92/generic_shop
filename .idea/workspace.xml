@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="cleanup">
+    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="sales display and some fixes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/Sale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/SaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/SaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/SessionManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +183,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1663651948680</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="update/remove Customer">
+      <created>1663654685634</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1663654685634</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +215,8 @@
     <MESSAGE value="product testing" />
     <MESSAGE value="menu and stuff" />
     <MESSAGE value="cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
+    <MESSAGE value="update/remove Customer" />
+    <MESSAGE value="sales display and some fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="sales display and some fixes." />
   </component>
 </project>

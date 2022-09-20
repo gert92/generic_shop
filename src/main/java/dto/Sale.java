@@ -19,7 +19,6 @@ public class Sale {
     @ManyToOne
     private Customer customer;
     @ManyToMany(fetch = FetchType.EAGER)
-    @ToString.Exclude
     private List<Product> product;
 
 }

@@ -9,9 +9,9 @@ import org.hibernate.cfg.Configuration;
 public class SessionManager {
     private static final SessionFactory factory = new Configuration()
             .configure("hibernate.cfg.xml")
+            .addAnnotatedClass(Sale.class)
             .addAnnotatedClass(Customer.class)
             .addAnnotatedClass(Product.class)
-            .addAnnotatedClass(Sale.class)
             .buildSessionFactory();
 
     public static SessionFactory getSessionFactory(){

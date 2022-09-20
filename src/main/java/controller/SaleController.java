@@ -18,25 +18,39 @@ public class SaleController {
 
     public void addSale(Customer customer, List<Product> products){
         Sale sale = Sale.builder().customer(customer).product(products).build();
-        repository.createSale(sale);
+        String response = repository.createSale(sale);
         customerRepository.updateCustomer(customer);
         products.forEach(productRepository::updateProduct);
+        System.out.println(response);
+    }
+
+    public void displayAllSales(){
+        List<Sale> sales = repository.findAllSales();
+        sales.forEach(sale -> {
+            System.out.println("Sale id: " + sale.getId());
+            System.out.println("Customer Name: " + sale.getCustomer().getName());
+            displayProductsByQuantity(sale);
+            System.out.println();
+        });
     }
 
     public void displaySalesByCustomer(Customer customer){
         List<Sale> sales = repository.findSalesByCustomerId(customer);
-        if (sales.size() > 0){
-            System.out.println(sales.get(0).getCustomer().getName() + " Bought these items: ");
-            Map<Product, Integer> map = new HashMap<>();
-            sales.forEach(sale -> sale.getProduct()
-                    .forEach(product -> {
-                if (map.containsKey(product)){
-                    map.put(product, map.get(product) + 1);
-                } else {
-                    map.put(product, 1);
-                }
-            }));
-            map.forEach((product, integer) -> System.out.println(product.getProductName() + " - " + product.getPrice() + "$" + " Amount: " + integer));
+        System.out.println(sales.get(0).getCustomer().getName() + " Bought these items: ");
+        sales.forEach(this::displayProductsByQuantity);
     }
+
+    public void displayProductsByQuantity(Sale sale){
+        Map<Product, Integer> map = new HashMap<>();
+        sale.getProduct()
+                .forEach(product -> {
+                    if (map.containsKey(product)){
+                        map.put(product, map.get(product) + 1);
+                    } else {
+                        map.put(product, 1);
+                    }
+                });
+        System.out.println("---------------------");
+        map.forEach((product, integer) -> System.out.println(product.getProductName() + " - " + product.getPrice() + "$" + " Amount: " + integer));
     }
 }

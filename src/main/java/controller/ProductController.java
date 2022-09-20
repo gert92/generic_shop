@@ -42,8 +42,30 @@ public class ProductController {
         return repository.findProductById(id);
     }
 
+    public void updateProduct(Product product){
+        repository.updateProduct(product);
+        System.out.println("Product Updated.");
+    }
+
     public void deleteProduct(Product product){
         repository.deleteProduct(product);
+    }
+
+    public Product chooseProduct(){
+        StringBuilder stringBuilder = new StringBuilder("Select the id of the product \n");
+        List<Product> products = findAllProducts();
+        products.forEach(m -> stringBuilder
+                .append(m.getId())
+                .append(" - ")
+                .append(m.getProductName())
+                .append(" - ")
+                .append(m.getQuantity())
+                .append(" - ")
+                .append(m.getPrice())
+                .append("$")
+                .append("\n"));
+        return findProduct(Long.parseLong(JOptionPane.showInputDialog(stringBuilder)));
+
     }
 
 }

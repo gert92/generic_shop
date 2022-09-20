@@ -1,9 +1,9 @@
 package dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,6 +19,7 @@ public class Product {
     private String productName;
     private Long quantity;
     private Double price;
+
 
 }
 
