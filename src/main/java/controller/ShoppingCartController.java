@@ -28,6 +28,7 @@ public class ShoppingCartController {
             if (option == 0){
                 saleController.addSale(customer, shoppingCart);
                 System.out.println("Thank you for your purchase!");
+                saleController.displaySalesByCustomer(customer);
                 break;
             }
             Optional<Product> chosenOne = products.stream().filter(product -> product.getId() == option).findFirst();

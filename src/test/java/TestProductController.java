@@ -1,4 +1,3 @@
-import controller.ProductController;
 import dto.Product;
 import org.assertj.core.api.Assertions;
 import org.hibernate.Session;
@@ -37,7 +36,6 @@ public class TestProductController {
     public void openSession(){
         session = sessionFactory.openSession();
         System.out.println("Session created");
-        System.out.println(product.getId());
     }
 
     @AfterEach
@@ -81,7 +79,6 @@ public class TestProductController {
     @Order(4)
     public void testRetrievingAllProducts(){
         List<Product> products = productRepository.findAllProducts();
-        System.out.println("products size: " + products.size());
         Assertions.assertThat(products).isNotEmpty();
     }
 

@@ -14,6 +14,11 @@ public class ProductController {
         return repository.findAllProducts();
     }
 
+    public void displayAllProducts(){
+        List<Product> products = findAllProducts();
+        products.forEach(System.out::println);
+    }
+
     public List<Product> findAllAvailableProducts(){
         return repository.findAllAvailableProducts();
     }

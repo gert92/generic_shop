@@ -12,7 +12,6 @@ public class CustomerRepository {
 
     private static final SessionFactory factory = SessionManager.getSessionFactory();
 
-
     public Customer createCustomer(Customer customer) {
         Transaction transaction = null;
 

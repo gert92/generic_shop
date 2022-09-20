@@ -17,7 +17,7 @@ public class CustomerController {
 
         Customer customer = Customer.builder()
                 .name(customerName)
-                .balance(Float.valueOf(customerBalance)).build();
+                .balance(Float.parseFloat(customerBalance)).build();
 
         return repository.createCustomer(customer);
 
@@ -25,6 +25,11 @@ public class CustomerController {
 
     public List<Customer> findAllCustomers(){
         return repository.showAllCustomer();
+    }
+
+    public void displayAllCustomers(){
+        List<Customer> customers = repository.showAllCustomer();
+        customers.forEach(System.out::println);
     }
 
     public Customer findCustomerById(Long id){
@@ -49,5 +54,6 @@ public class CustomerController {
         Optional<Customer> customer = customers.stream().filter(c -> c.getId() == answer).findFirst();
         return customer.orElse(null);
     }
+
 
 }
