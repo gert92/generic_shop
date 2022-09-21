@@ -80,7 +80,7 @@ public class CustomerRepository {
         return "Customer removed.";
     }
 
-    public String updateCustomer(Customer customer){
+    public Customer updateCustomer(Customer customer){
         Transaction transaction = null;
         try(Session session = factory.openSession()) {
             transaction = session.beginTransaction();
@@ -93,7 +93,7 @@ public class CustomerRepository {
             e.printStackTrace();
         }
 
-        return "Customer updated successfully.";
+        return customer;
     }
 
 

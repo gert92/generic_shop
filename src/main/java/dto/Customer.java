@@ -19,7 +19,7 @@ public class Customer {
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
+    private String customerName;
     private float balance;
 
 }

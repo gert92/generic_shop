@@ -16,7 +16,7 @@ public class CustomerController {
         String customerBalance = JOptionPane.showInputDialog("Enter the amount in the customers balance. Example: 544.23");
 
         Customer customer = Customer.builder()
-                .name(customerName)
+                .customerName(customerName)
                 .balance(Float.parseFloat(customerBalance)).build();
 
         return repository.createCustomer(customer);
@@ -40,14 +40,14 @@ public class CustomerController {
     public Customer chooseCustomer(){
         StringBuilder stringBuilder = new StringBuilder("Select the id of the customer \n");
         List<Customer> customers = findAllCustomers();
-        customers.forEach(m -> stringBuilder.append(m.getId()).append(" - ").append(m.getName()).append("\n"));
+        customers.forEach(m -> stringBuilder.append(m.getId()).append(" - ").append(m.getCustomerName()).append("\n"));
         return findCustomerById(Long.parseLong(JOptionPane.showInputDialog(stringBuilder)));
     }
 
 
     public void updateFields(Customer customer){
-        String response =  repository.updateCustomer(customer);
-        System.out.println(response);
+        repository.updateCustomer(customer);
+        System.out.println("Customer Updated.");
     }
 
     public void removeCustomer(Customer customer){
