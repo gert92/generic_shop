@@ -108,7 +108,7 @@ public class MenuController {
         switch (getUserInput(updateCustomerOptions)) {
             case 0 -> customersMenu();
             case 1 -> {
-                customer.setName(JOptionPane.showInputDialog("Enter new customer name."));
+                customer.setCustomerName(JOptionPane.showInputDialog("Enter new customer name."));
                 updateCustomerMenu(customer);
             }
             case 2 -> {
