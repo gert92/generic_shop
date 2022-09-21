@@ -15,9 +15,8 @@ public class SaleRepository {
     private static final SessionFactory factory = SessionManager.getSessionFactory();
 
 
-    public String createSale(Sale sale){
+    public Sale createSale(Sale sale){
         Transaction tx = null;
-
         try(Session session = factory.openSession()) {
             tx = session.beginTransaction();
             session.persist(sale);
@@ -28,7 +27,7 @@ public class SaleRepository {
             }
             e.printStackTrace();
         }
-        return "Sale successful!";
+        return sale;
     }
 
     public List<Sale> findAllSales(){

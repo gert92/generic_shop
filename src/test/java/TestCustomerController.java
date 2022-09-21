@@ -71,21 +71,21 @@ public class TestCustomerController {
 
     @Test
     @Order(4)
-    public void testRemovingACustomer() {
-        Customer findCustomer = customerRepository.findCustomerById(customer.getId());
-        org.assertj.core.api.Assertions.assertThat(findCustomer).isNotNull();
-        customerRepository.removeCustomer(findCustomer);
-        Customer removedCustomer = customerRepository.findCustomerById(customer.getId());
-        Assertions.assertThat(removedCustomer).isNull();
-    }
-
-    @Test
-    @Order(5)
     public void testUpdateASingleCustomer() {
         customer.setCustomerName("TestingUpdate");
         customer.setBalance(8000F);
         Customer updatedCustomer = customerRepository.updateCustomer(customer);
         org.assertj.core.api.Assertions.assertThat(updatedCustomer.getCustomerName()).isEqualTo(customer.getCustomerName());
         org.assertj.core.api.Assertions.assertThat(updatedCustomer.getBalance()).isEqualTo(customer.getBalance());
+    }
+
+    @Test
+    @Order(5)
+    public void testRemovingACustomer() {
+        Customer findCustomer = customerRepository.findCustomerById(customer.getId());
+        org.assertj.core.api.Assertions.assertThat(findCustomer).isNotNull();
+        customerRepository.removeCustomer(findCustomer);
+        Customer removedCustomer = customerRepository.findCustomerById(customer.getId());
+        Assertions.assertThat(removedCustomer).isNull();
     }
 }

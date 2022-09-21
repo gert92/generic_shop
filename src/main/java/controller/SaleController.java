@@ -18,10 +18,10 @@ public class SaleController {
 
     public void addSale(Customer customer, List<Product> products){
         Sale sale = Sale.builder().customer(customer).product(products).build();
-        String response = repository.createSale(sale);
+        repository.createSale(sale);
         customerRepository.updateCustomer(customer);
         products.forEach(productRepository::updateProduct);
-        System.out.println(response);
+        System.out.println("Sale successful!");
     }
 
     public void displayAllSales(){

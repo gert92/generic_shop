@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="Added TestSaleController" />
+    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="GS-1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/SaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/SaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestSaleController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,10 +69,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TestSaleController">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="generic_shop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCustomerController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="generic_shop" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCustomerController" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -91,8 +105,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestSaleController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="generic_shop" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSaleController" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSaleController" />
+        <item itemvalue="JUnit.TestCustomerController" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestProductController" />
         <item itemvalue="JUnit.TestProductController.testRetrievingAllProducts" />
@@ -186,49 +211,13 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1663686426305</updated>
     </task>
-    <task id="LOCAL-00014" summary="Made few changes in Customer, CustomerController, CustomerRepository and added TestCustomerController">
-      <created>1663753686198</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1663753686198</updated>
+    <task id="LOCAL−00014" summary="GS-1">
+      <created>1663705275492</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1663705275492</updated>
     </task>
-    <task id="LOCAL-00015" summary="big dick">
-      <created>1663753823139</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1663753823139</updated>
-    </task>
-    <task id="LOCAL-00016" summary="big dick">
-      <created>1663753870665</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1663753870665</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fix">
-      <created>1663753940092</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1663753940092</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fix">
-      <created>1663753983480</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1663753983480</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Added TestSaleController">
-      <created>1663757817013</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1663757817013</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,6 +236,7 @@
     <MESSAGE value="adding stuff" />
     <MESSAGE value="session manager" />
     <MESSAGE value="repos" />
+    <MESSAGE value="fix" />
     <MESSAGE value="ejj" />
     <MESSAGE value="shopping cart + display" />
     <MESSAGE value="mockito + junit install" />
@@ -255,10 +245,7 @@
     <MESSAGE value="cleanup" />
     <MESSAGE value="update/remove Customer" />
     <MESSAGE value="sales display and some fixes." />
-    <MESSAGE value="Made few changes in Customer, CustomerController, CustomerRepository and added TestCustomerController" />
-    <MESSAGE value="big dick" />
-    <MESSAGE value="fix" />
-    <MESSAGE value="Added TestSaleController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TestSaleController" />
+    <MESSAGE value="GS-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="GS-1" />
   </component>
 </project>
