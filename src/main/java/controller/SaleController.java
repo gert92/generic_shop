@@ -28,7 +28,7 @@ public class SaleController {
         List<Sale> sales = repository.findAllSales();
         sales.forEach(sale -> {
             System.out.println("Sale id: " + sale.getId());
-            System.out.println("Customer Name: " + sale.getCustomer().getName());
+            System.out.println("Customer Name: " + sale.getCustomer().getCustomerName());
             displayProductsByQuantity(sale);
             System.out.println();
         });
@@ -36,7 +36,7 @@ public class SaleController {
 
     public void displaySalesByCustomer(Customer customer){
         List<Sale> sales = repository.findSalesByCustomerId(customer);
-        System.out.println(sales.get(0).getCustomer().getName() + " Bought these items: ");
+        System.out.println(sales.get(0).getCustomer().getCustomerName() + " Bought these items: ");
         sales.forEach(this::displayProductsByQuantity);
     }
 
