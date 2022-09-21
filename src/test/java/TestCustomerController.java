@@ -1,5 +1,4 @@
 import dto.Customer;
-import dto.Product;
 import org.assertj.core.api.Assertions;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,7 +16,7 @@ public class TestCustomerController {
     private Session session;
 
     @BeforeAll
-    public static void setUp(){
+    public static void setUp() {
         sessionFactory = SessionManager.getSessionFactory();
         customerRepository = new CustomerRepository();
         customer = Customer.builder().customerName("Gert").balance(2000F).build();
@@ -26,22 +25,22 @@ public class TestCustomerController {
     }
 
     @AfterAll
-    public static void shutDown(){
-        if (sessionFactory != null){
+    public static void shutDown() {
+        if (sessionFactory != null) {
             sessionFactory.close();
             System.out.println("Session Factory closed!");
         }
     }
 
     @BeforeEach
-    public void openSession(){
+    public void openSession() {
         session = sessionFactory.openSession();
         System.out.println("Session created!");
     }
 
     @AfterEach
-    public void closeSession(){
-        if (session != null){
+    public void closeSession() {
+        if (session != null) {
             session.close();
             System.out.println("Session closed!");
         }
@@ -49,14 +48,14 @@ public class TestCustomerController {
 
     @Test
     @Order(1)
-    public void testCreateCustomer(){
+    public void testCreateCustomer() {
         customer = customerRepository.createCustomer(customer);
         org.assertj.core.api.Assertions.assertThat(customer.getId()).isGreaterThan(0);
     }
 
     @Test
     @Order(2)
-    public void testGetSingleCustomerById(){
+    public void testGetSingleCustomerById() {
         Customer dataCustomer = customerRepository.findCustomerById(customer.getId());
         org.assertj.core.api.Assertions.assertThat(dataCustomer.getCustomerName()).isEqualTo(dataCustomer.getCustomerName());
         org.assertj.core.api.Assertions.assertThat(dataCustomer.getBalance()).isEqualTo(customer.getBalance());
@@ -65,23 +64,24 @@ public class TestCustomerController {
 
     @Test
     @Order(3)
-    public void testShowingAllCustomers(){
+    public void testShowingAllCustomers() {
         List<Customer> customers = customerRepository.showAllCustomer();
         org.assertj.core.api.Assertions.assertThat(customers).isNotEmpty();
     }
 
     @Test
     @Order(4)
-    public void testRemovingACustomer(){
+    public void testRemovingACustomer() {
         Customer findCustomer = customerRepository.findCustomerById(customer.getId());
         org.assertj.core.api.Assertions.assertThat(findCustomer).isNotNull();
         customerRepository.removeCustomer(findCustomer);
         Customer removedCustomer = customerRepository.findCustomerById(customer.getId());
         Assertions.assertThat(removedCustomer).isNull();
     }
+
     @Test
     @Order(5)
-    public void testUpdateASingleCustomer(){
+    public void testUpdateASingleCustomer() {
         customer.setCustomerName("TestingUpdate");
         customer.setBalance(8000F);
         Customer updatedCustomer = customerRepository.updateCustomer(customer);
