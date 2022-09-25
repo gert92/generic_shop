@@ -1,17 +1,20 @@
 package controller;
 
 import dto.Customer;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import repository.CustomerRepository;
 
 import javax.swing.*;
 import java.util.List;
-import java.util.Optional;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomerController {
 
-    CustomerRepository repository = new CustomerRepository();
+    CustomerRepository customerRepository = new CustomerRepository();
 
-    public Customer addCustomer(){
+    public void addCustomer(){
         String customerName = JOptionPane.showInputDialog("Enter the customers name: ");
         String customerBalance = JOptionPane.showInputDialog("Enter the amount in the customers balance. Example: 544.23");
 
@@ -19,21 +22,21 @@ public class CustomerController {
                 .customerName(customerName)
                 .balance(Float.parseFloat(customerBalance)).build();
 
-        return repository.createCustomer(customer);
+        customerRepository.createCustomer(customer);
 
     }
 
     public List<Customer> findAllCustomers(){
-        return repository.showAllCustomer();
+        return customerRepository.showAllCustomer();
     }
 
     public void displayAllCustomers(){
-        List<Customer> customers = repository.showAllCustomer();
+        List<Customer> customers = customerRepository.showAllCustomer();
         customers.forEach(System.out::println);
     }
 
     public Customer findCustomerById(Long id){
-        return repository.findCustomerById(id);
+        return customerRepository.findCustomerById(id);
     }
 
 
@@ -46,12 +49,12 @@ public class CustomerController {
 
 
     public void updateFields(Customer customer){
-        repository.updateCustomer(customer);
+        customerRepository.updateCustomer(customer);
         System.out.println("Customer Updated.");
     }
 
     public void removeCustomer(Customer customer){
-        String response = repository.removeCustomer(customer);
+        String response = customerRepository.removeCustomer(customer);
         System.out.println(response);
     }
 

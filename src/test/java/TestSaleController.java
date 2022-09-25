@@ -26,7 +26,7 @@ public class TestSaleController {
     }
 
     @AfterAll
-    public static void shutDown() {
+    public static void tearDown() {
         if (sessionFactory != null) {
             sessionFactory.close();
             System.out.println("Session Factory closed!");
