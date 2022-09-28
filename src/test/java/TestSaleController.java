@@ -50,7 +50,7 @@ public class TestSaleController {
     @Test
     @Order(1)
     public void testCreateSale() {
-        sale = saleRepository.createSale(sale); // Problem \\
+        sale = saleRepository.createSale(sale);
         Assertions.assertThat(sale.getId()).isGreaterThan(0);
     }
 

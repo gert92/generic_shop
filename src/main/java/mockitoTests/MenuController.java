@@ -1,4 +1,4 @@
-package controller;
+package mockitoTests;
 
 import dto.Customer;
 import dto.Product;

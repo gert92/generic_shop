@@ -1,8 +1,10 @@
-package controller;
+package mockitoTests;
 
 import dto.Customer;
 import dto.Product;
 import dto.Sale;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import repository.CustomerRepository;
 import repository.ProductRepository;
 import repository.SaleRepository;
@@ -11,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class SaleController {
     SaleRepository repository = new SaleRepository();
     CustomerRepository customerRepository = new CustomerRepository();

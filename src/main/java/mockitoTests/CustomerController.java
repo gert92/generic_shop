@@ -1,4 +1,4 @@
-package controller;
+package mockitoTests;
 
 import dto.Customer;
 import lombok.AllArgsConstructor;
@@ -36,7 +36,7 @@ public class CustomerController {
     }
 
     public Customer findCustomerById(Long id){
-        return customerRepository.findCustomerById(id);
+        return customerRepository.searchCustomerById(id);
     }
 
 

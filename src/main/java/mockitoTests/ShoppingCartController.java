@@ -1,4 +1,4 @@
-package controller;
+package mockitoTests;
 
 import dto.Customer;
 import dto.Product;
@@ -12,7 +12,7 @@ public class ShoppingCartController {
     ProductController productController = new ProductController();
     SaleController saleController = new SaleController();
 
-    List<Product> products = productController.findAllAvailableProducts();
+    List<Product> products = productController.displayAllAvailableProducts();
 
     public void addToShoppingCart(Customer customer){
         List<Product> shoppingCart = new ArrayList<>();

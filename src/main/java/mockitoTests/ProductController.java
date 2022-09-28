@@ -1,11 +1,14 @@
-package controller;
+package mockitoTests;
 
 import dto.Product;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import repository.ProductRepository;
 
 import javax.swing.*;
 import java.util.List;
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductController {
 
     ProductRepository repository = new ProductRepository();
@@ -19,7 +22,7 @@ public class ProductController {
         products.forEach(System.out::println);
     }
 
-    public List<Product> findAllAvailableProducts(){
+    public List<Product> displayAllAvailableProducts(){
         return repository.findAllAvailableProducts();
     }
 
