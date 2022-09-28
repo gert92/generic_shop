@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="Testing Mockito in TestCustomerController">
-      <change afterPath="$PROJECT_DIR$/src/test/java/mockitoTests/CustomerControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mockitoTests/ProductControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mockitoTests/SaleControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mockitoTests/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mockitoTests/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mockitoTests/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mockitoTests/SaleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mockitoTests/ShoppingCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestSaleController.java" afterDir="false" />
+    <list default="true" id="94f4dc65-d962-4b61-9da7-b1530d38b4c3" name="Changes" comment="Separated Mockito tests and our previous tests. Added CustomerControllerTest, ProductControllerTest and SaleControllerTest. &#10;Made few adjustments to method names to be more distinct.">
+      <change beforePath="$PROJECT_DIR$/src/test/java/mockitoTests/SaleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mockitoTests/SaleControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +76,7 @@
       <recent name="repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SaleControllerTest.addSale">
+  <component name="RunManager" selected="JUnit.SaleControllerTest">
     <configuration name="CustomerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="generic_shop" />
       <extension name="coverage">
@@ -135,6 +123,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SaleControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="generic_shop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mockitoTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mockitoTests" />
+      <option name="MAIN_CLASS_NAME" value="mockitoTests.SaleControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SaleControllerTest.addSale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="generic_shop" />
       <extension name="coverage">
@@ -151,29 +154,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SaleControllerTest.displaySalesByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="generic_shop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mockitoTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mockitoTests" />
-      <option name="MAIN_CLASS_NAME" value="mockitoTests.SaleControllerTest" />
-      <option name="METHOD_NAME" value="displaySalesByCustomer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SaleControllerTest" />
         <item itemvalue="JUnit.SaleControllerTest.addSale" />
         <item itemvalue="JUnit.ProductControllerTest" />
         <item itemvalue="JUnit.CustomerControllerTest" />
         <item itemvalue="JUnit.ProductControllerTest.testFindProductById" />
-        <item itemvalue="JUnit.SaleControllerTest.displaySalesByCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +257,14 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1663705275492</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Separated Mockito tests and our previous tests. Added CustomerControllerTest, ProductControllerTest and SaleControllerTest. &#10;Made few adjustments to method names to be more distinct.">
+      <created>1664373014570</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1664373014570</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +293,18 @@
     <MESSAGE value="update/remove Customer" />
     <MESSAGE value="sales display and some fixes." />
     <MESSAGE value="GS-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="GS-1" />
+    <MESSAGE value="Separated Mockito tests and our previous tests. Added CustomerControllerTest, ProductControllerTest and SaleControllerTest. &#10;Made few adjustments to method names to be more distinct." />
+    <option name="LAST_COMMIT_MESSAGE" value="Separated Mockito tests and our previous tests. Added CustomerControllerTest, ProductControllerTest and SaleControllerTest. &#10;Made few adjustments to method names to be more distinct." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mockitoTests/SaleControllerTest.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

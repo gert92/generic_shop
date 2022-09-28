@@ -44,19 +44,32 @@ class SaleControllerTest {
 
     @Test
     @Order(1)
-    void addSale() {
+    void testAddSale() {
+//        Customer customer1 = new Customer(51L, "Name", 3000F);
+//        Product product1 = new Product(67L, "Bag of dead flies", 100L, 9.99);
+//        List<Product> list1 = new ArrayList<>((Collection) product1);
+//        Sale sale1 = new Sale(30L, customer1, list1);
+//        saleRepository.createSale(sale1);
+//
+//        ArgumentCaptor<Product> productArgumentCaptor = ArgumentCaptor.forClass(Product.class);
+//
+//        verify(saleRepository).createSale(productArgumentCaptor.capture());
+//
+//        Product capturedProduct =  productArgumentCaptor.getValue();
+//
+//        assertThat(capturedProduct).isEqualTo(product1);
     }
 
     @Test
     @Order(2)
-    void displayAllSales() {
+    void testDisplayAllSales() {
         underTest.displayAllSales();
         verify(saleRepository).findAllSales();
     }
 
     @Test
     @Order(3)
-    void displaySalesByCustomer() {
+    void testDisplaySalesByCustomer() {
 //        Customer customer1 = new Customer(51L, "Name", 3000F);
 //        Product product1 = new Product(67L, "Bag of dead flies", 100L, 9.99);
 //        List<Product> list1 = new ArrayList<>((Collection) product1);
@@ -67,7 +80,7 @@ class SaleControllerTest {
 
     @Test
     @Order(4)
-    void displayProductsByQuantity() {
+    void testDisplayProductsByQuantity() {
 //        underTest.displayProductsByQuantity();
 //        verify(saleRepository).findAllSales();
 
